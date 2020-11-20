@@ -9,11 +9,5 @@ script:
   - npm install --global --verbose npm@7.x.x
   # install modules required for build
   - npm install --verbose
-  - if [ "$TRAVIS_OS_NAME" = "osx" ] 
-  - then
-  - ./node_modules/.bin/electron-builder -m
-  - fi
-  - if [ "$TRAVIS_OS_NAME" = "linux" ] 
-  - then
-  - ./node_modules/.bin/electron-builder -ml
-  - fi
+  - if [ "$TRAVIS_OS_NAME" = "macos" ]; then ./node_modules/.bin/electron-builder -m; fi
+  - if [ "$TRAVIS_OS_NAME" = "linux" ]; then ./node_modules/.bin/electron-builder -l; fi
