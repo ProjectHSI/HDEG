@@ -2,18 +2,86 @@
   "name": "hdeg",
   "version": "0.0.1-alpha.1",
   "description": "Graphical Version Of HDE [HSI Dev Env]",
-  "main": "./main.js",
+  "main": "./launchmain.js",
   "scripts": {
-    "test": "node . ./main.js --runcompile"
+    "test": "node ./launchmain.js --RunCompile"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ProjectHSI/HDEG.git"
   },
   "author": "[Project HSI]",
-  "license": "MIT",
+  "license": "UNLICENSED",
   "bugs": {
     "url": "https://github.com/ProjectHSI/HDEG/issues"
   },
-  "homepage": "https://github.com/ProjectHSI/HDEG#readme"
+  "homepage": "https://github.com/ProjectHSI/HDEG#readme",
+  "devDependencies": {
+    "electron": "^11.0.2"
+  },
+  "dependencies": {
+    "electron-builder": "^22.9.1"
+  },
+  "build": {
+    "appId": "com.hsi.hdeg",
+    "productName": "HSI Developer Environment",
+    "asar": true,
+    "compression": "maximum",
+    "copyright": "No Copyright",
+    "directories": {
+      "output": "dist",
+      "app": "src"
+    },
+    "forceCodeSigning": true,
+    "npmRebuild": true,
+    "artifactName": "HDE-${os}-${arch}.${ext}",
+    "linux": {
+      "target": [
+        {
+          "target": "AppImage",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        }
+      ],
+      "category": "System",
+      "icon": "media/linuxIcons"
+    },
+    "appImage": {
+      "artifactName": "HDE Linux (${arch}).AppImage"
+    },
+    "mac": {
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "category": "public.app-category.utilities",
+      "icon": "media/icon.icns"
+    },
+    "dmg": {
+      "artifactName": "HDE MacOS Image.dmg"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis-web",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        }
+      ],
+      "icon": "media/icon.ico"
+    },
+    "nsis": {
+      "artifactName": "HDE Windows Installer.exe",
+      "oneClick": false,
+      "deleteAppDataOnUninstall": true
+    }
+  }
 }
