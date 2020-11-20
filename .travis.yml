@@ -1,23 +1,26 @@
 language: node_js
 node_js:
-  - 14
+- 14
 os:
-  - osx
-  - linux
+- osx
+- linux
 script:
-  # install lastest version of npm module
-  - npm install --global --verbose npm@7.x.x
-  # install modules required for build
-  - npm install --verbose
-  - if [ "$TRAVIS_OS_NAME" = "macos" ]; then ./node_modules/.bin/electron-builder -m; fi
-  - if [ "$TRAVIS_OS_NAME" = "linux" ]; then ./node_modules/.bin/electron-builder -l; fi
+- npm install --global --verbose npm@7.x.x
+- npm install --verbose
+- if [ "$TRAVIS_OS_NAME" = "macos" ]; then ./node_modules/.bin/electron-builder -m;
+  fi
+- if [ "$TRAVIS_OS_NAME" = "linux" ]; then ./node_modules/.bin/electron-builder -l;
+  fi
 deploy:
   provider: releases
-  api_key: "a1e8f7d49f22c2438eae85f51aa0f6aa8ca87817"
+  api_key: a1e8f7d49f22c2438eae85f51aa0f6aa8ca87817
   file_glob: true
   file: dist/HDE*.*
   skip_cleanup: true
   on:
     tags: true
 env:
+  matrix:
   - GH_TOKEN=a1e8f7d49f22c2438eae85f51aa0f6aa8ca87817
+  global:
+    secure: brKq6XB03YrJHjizURyPKshlzwzOud9fsvCKP0RvwqNaSZQOCaEJwKlmc0hZzrnJ/IBeC9NpKDWCTxT4Gg/vmB73RoMndZw34pXcx/nXi8BGHvwZ3nayfftw1QCaEnX9N5Dq3B/CYs/ZpLf/9uXnGFrx1AoEP+bXZcjI3McWlPwlO6C4AGpSgKeuvoyphV0CAOT19G6qElbNLbSYxole+4XjIV9rEKx1XhD3iBzKjtn30mE64bEfY5EdbgRTZ9NHwyFrKlWrOVDUU9uPF5yrhyV7yGc49d8WLkz8kw7WoMTWLJ78wlOvF/neEQBfGnC3jhaj3pAWnbyFKZ7UGvPDiU0nIw7EgHLNCr7WIROdFDaMoj/MTyyVyLQFs9GjyKdBqkDyfo/vFHfzc+dy8v2XiwebX6ltcgYAeHtYZI0ijwCvf9/6ZSRYAqs0XVI/VwhU3eusduugTxBusELCKmRALK6TbMqVqgyFpetRfS3XfYSvUv6QktOfyifeqs9zolCImFLICoLcFgaqmPyHUSTqmC6ajvIVnlVrXquRhLeQ4lG1EXgBk3Ogj2IN1bDe/6JkSw2tz0XFoLTRJOtg3jlVoWPO5doe6gPEKuStb6y78+1NQjLccM/wn1NeN/QYDpjEkIHElI+Vyx49jXXMyO2jJLMYg9u5Dpo+nZvlG3r3XHE=
