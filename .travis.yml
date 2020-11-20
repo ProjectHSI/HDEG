@@ -13,7 +13,7 @@ script:
   - if [ "$TRAVIS_OS_NAME" = "linux" ]; then ./node_modules/.bin/electron-builder -l; fi
 deploy:
   provider: releases
-  api_key: "GITHUB OAUTH TOKEN"
+  api_key: "76a6d3434e6b0c9efa1a0f2355cde22fb760b75f"
   file_glob: true
   file: dist/HDE*.*
   skip_cleanup: true
