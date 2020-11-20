@@ -1,12 +1,13 @@
 language: node_js
+node_js:
+  - 14
 os:
   - osx
   - linux
 script:
-  # Get the latest stable version of Node.js or io.js
-  - ps: Install-Product node 14
   # install lastest version of npm module
   - npm install --global --verbose npm@7.x.x
   # install modules required for build
   - npm install --verbose
-  - cmd: .\node_modules\.bin\electron-builder.cmd
+  - if [ "$TRAVIS_OS_NAME" = "osx" ]; ./node_modules/.bin/electron-builder -m ; fi
+  - if [ "$TRAVIS_OS_NAME" = "linux" ]; ./node_modules/.bin/electron-builder -l ; fi
