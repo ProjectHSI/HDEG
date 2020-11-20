@@ -3,4 +3,10 @@ os:
   - osx
   - linux
 script:
-  ./node_modules/
+  # Get the latest stable version of Node.js or io.js
+  - ps: Install-Product node 14
+  # install lastest version of npm module
+  - npm install --global --verbose npm@7.x.x
+  # install modules required for build
+  - npm install --verbose
+  - cmd: .\node_modules\.bin\electron-builder.cmd
