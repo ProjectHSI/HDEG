@@ -11,3 +11,11 @@ script:
   - npm install --verbose
   - if [ "$TRAVIS_OS_NAME" = "macos" ]; then ./node_modules/.bin/electron-builder -m; fi
   - if [ "$TRAVIS_OS_NAME" = "linux" ]; then ./node_modules/.bin/electron-builder -l; fi
+deploy:
+  provider: releases
+  api_key: "GITHUB OAUTH TOKEN"
+  file_glob: true
+  file: dist/HDE*.*
+  skip_cleanup: true
+  on:
+    tags: true
