@@ -32,7 +32,7 @@
       "output": "dist",
       "app": "src"
     },
-    "forceCodeSigning": true,
+    "forceCodeSigning": false,
     "npmRebuild": true,
     "artifactName": "HDE-${os}-${arch}.${ext}",
     "linux": {
