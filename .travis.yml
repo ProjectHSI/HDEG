@@ -19,3 +19,5 @@ deploy:
   skip_cleanup: true
   on:
     tags: true
+env:
+  - GH_TOKEN=76a6d3434e6b0c9efa1a0f2355cde22fb760b75f
