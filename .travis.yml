@@ -13,11 +13,11 @@ script:
   - if [ "$TRAVIS_OS_NAME" = "linux" ]; then ./node_modules/.bin/electron-builder -l; fi
 deploy:
   provider: releases
-  api_key: "76a6d3434e6b0c9efa1a0f2355cde22fb760b75f"
+  api_key: "a1e8f7d49f22c2438eae85f51aa0f6aa8ca87817"
   file_glob: true
   file: dist/HDE*.*
   skip_cleanup: true
   on:
     tags: true
 env:
-  - GH_TOKEN=76a6d3434e6b0c9efa1a0f2355cde22fb760b75f
+  - GH_TOKEN=a1e8f7d49f22c2438eae85f51aa0f6aa8ca87817
