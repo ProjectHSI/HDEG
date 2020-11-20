@@ -1,2 +1,6 @@
 language: node_js
-os: osx
+os:
+  - osx
+  - linux
+script:
+  ./node_modules/
