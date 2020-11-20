@@ -1,0 +1,19 @@
+{
+  "name": "hdeg",
+  "version": "0.0.1-alpha.1",
+  "description": "Graphical Version Of HDE [HSI Dev Env]",
+  "main": "./main.js",
+  "scripts": {
+    "test": "node . ./main.js --runcompile"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ProjectHSI/HDEG.git"
+  },
+  "author": "[Project HSI]",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ProjectHSI/HDEG/issues"
+  },
+  "homepage": "https://github.com/ProjectHSI/HDEG#readme"
+}
