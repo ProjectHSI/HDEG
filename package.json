@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/ProjectHSI/HDEG#readme",
   "devDependencies": {
-    "electron": "^11.5.0"
+    "electron": "^22.3.21"
   },
   "dependencies": {
     "electron-builder": "^22.9.1"
